@@ -10,8 +10,40 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="au.com.wsit.quizapp.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+
+
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="48"
+            android:padding="15dp"
+            android:textSize="70sp"
+            android:id="@+id/firstNumberTextView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:padding="15dp"
+            android:textSize="70sp"
+            android:id="@+id/additionTextView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="70sp"
+            android:padding="15dp"
+            android:text="10"
+            android:id="@+id/secondNumberTextView"/>
+    </LinearLayout>
 </RelativeLayout>
