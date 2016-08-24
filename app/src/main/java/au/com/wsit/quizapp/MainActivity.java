@@ -22,7 +22,14 @@ public class MainActivity extends AppCompatActivity
         mFirstNumber = (TextView) findViewById(R.id.firstNumberTextView);
         mSecondNumber = (TextView) findViewById(R.id.secondNumberTextView);
 
-        // Generate a question
+        // Create a question object
+        Question question = new Question("EASY");
+
+        // Generate
+        int[] numbers = question.create();
+
+        mFirstNumber.setText(numbers[0] + "");
+        mSecondNumber.setText(numbers[1] + "");
 
 
 

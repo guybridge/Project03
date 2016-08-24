@@ -6,8 +6,7 @@ package au.com.wsit.quizapp;
 public class Question
 {
     private String mSkillLevel;
-    private int mFirstNumber;
-    private int mSecondNumber;
+    private int mNumberRange;
 
     public Question(String skillLevel)
     {
@@ -16,23 +15,35 @@ public class Question
         if (mSkillLevel.equals("EASY"))
         {
             // Set number range
-
+            mNumberRange = 10;
         }
         else if(mSkillLevel.equals("MEDIUM"))
         {
           // Set number range
+            mNumberRange = 100;
         }
         else if(mSkillLevel.equals("HARD"))
         {
             // Set number range
+            mNumberRange = 1000;
         }
     }
 
+
+    // Creates two random numbers
     public int[] create()
     {
-        mFirstNumber = 10;
 
-        return null;
+        // Create two numbers
+        Number firstNumber = new Number(mNumberRange);
+        Number secondNumber = new Number(mNumberRange);
+
+        // Generate the numbers and store in the array
+
+        int[] numbers = {firstNumber.generate(), secondNumber.generate()};
+
+        // return the array
+        return numbers;
 
 
     }
