@@ -36,6 +36,11 @@ public class Settings extends PreferenceActivity
         listPreference.setValue(skillLevel);
         listPreference.setTitle(skillLevel);
 
+        setSummary(skillLevel);
+
+        listPreference.setValue(skillLevel);
+        listPreference.setTitle(skillLevel);
+
 
         listPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
         {
@@ -49,11 +54,29 @@ public class Settings extends PreferenceActivity
                 mSharedPreferences.edit().putString(Constants.KEY_SKILL_LEVEL, newValue.toString()).apply();
 
                 listPreference.setTitle(newValue.toString());
+                setSummary(newValue.toString());
 
                 return false;
             }
         });
 
 
+    }
+
+    private void setSummary(String skillLevel)
+    {
+        switch(skillLevel)
+        {
+            case "Easy":
+
+                listPreference.setSummary("Number range max is 10");
+                break;
+            case "Medium":
+                listPreference.setSummary("Number range max is 100");
+                break;
+            case "Hard":
+                listPreference.setSummary("Number range max is 1000");
+
+        }
     }
 }

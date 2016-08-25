@@ -66,10 +66,22 @@ public class MainActivity extends AppCompatActivity
     {
         super.onResume();
 
+        updateSkillLevel();
+        updateCounters();
+
+
+        displayQuestion();
+    }
+
+    private void updateSkillLevel()
+    {
         // Get the skill level and display
         mSkillLevelSetting = mSharedPreferences.getString(Constants.KEY_SKILL_LEVEL, "Easy");
         mSkillLevel.setText(mSkillLevelSetting);
+    }
 
+    private void updateCounters()
+    {
         // Display the counters
         try
         {
@@ -80,9 +92,6 @@ public class MainActivity extends AppCompatActivity
         {
             e.printStackTrace();
         }
-
-
-        displayQuestion();
     }
 
     private void displayQuestion()
