@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Quiz App</string>
     <string name="settings">Settings</string>
+
+    <string-array name="skill_level">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
+
+
 </resources>

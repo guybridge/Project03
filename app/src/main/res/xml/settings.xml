@@ -4,7 +4,9 @@
         android:title="Difficulty level" />
     <ListPreference
         android:key="KEY_SKILL_LEVEL"
+        android:defaultValue="Easy"
         android:title="Easy"
-        android:summary="Numbers range from 1 to 10"/>
+        android:entries="@array/skill_level"
+        android:entryValues="@array/skill_level"/>
 
 </PreferenceScreen>

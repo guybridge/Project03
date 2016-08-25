@@ -19,7 +19,8 @@ public class Number
     public int generate()
     {
         Random random = new Random();
-        int number = random.nextInt(mRandomNumberMax);
+        int number = random.nextInt(mRandomNumberMax) + 1;
+
 
         return number;
 

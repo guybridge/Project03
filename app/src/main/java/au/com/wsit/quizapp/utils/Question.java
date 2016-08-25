@@ -2,8 +2,6 @@ package au.com.wsit.quizapp.utils;
 
 import java.util.Random;
 
-import au.com.wsit.quizapp.utils.Number;
-
 /**
  * Created by guyb on 23/08/16.
  */
@@ -19,17 +17,17 @@ public class Question
     {
         mSkillLevel = skillLevel;
 
-        if (mSkillLevel.equals("EASY"))
+        if (mSkillLevel.equals("Easy"))
         {
             // Set number range
             mNumberRange = 10;
         }
-        else if(mSkillLevel.equals("MEDIUM"))
+        else if(mSkillLevel.equals("Medium"))
         {
           // Set number range
             mNumberRange = 100;
         }
-        else if(mSkillLevel.equals("HARD"))
+        else if(mSkillLevel.equals("Hard"))
         {
             // Set number range
             mNumberRange = 1000;
@@ -73,8 +71,8 @@ public class Question
         answers[0] = mAnswer;
 
         // Create other wrong answers
-        answers[1] = new Random().nextInt(mNumberRange);
-        answers[2] = new Random().nextInt(mNumberRange);
+        answers[1] = new Random().nextInt(mNumberRange + mNumberRange);
+        answers[2] = new Random().nextInt(mNumberRange + mNumberRange);
 
 
         return answers;
