@@ -1,4 +1,4 @@
-package au.com.wsit.quizapp;
+package au.com.wsit.quizapp.utils;
 
 import java.util.Random;
 
