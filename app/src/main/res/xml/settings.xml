@@ -8,5 +8,11 @@
         android:title="Easy"
         android:entries="@array/skill_level"
         android:entryValues="@array/skill_level"/>
+    <PreferenceCategory
+        android:title="User data" />
+    <Preference
+        android:title="Clear counters"
+        android:summary="Reset the correct incorrect counters"
+        android:key="KEY_RESET" />
 
 </PreferenceScreen>

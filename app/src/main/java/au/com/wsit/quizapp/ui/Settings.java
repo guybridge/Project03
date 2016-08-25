@@ -7,6 +7,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import au.com.wsit.quizapp.R;
 import au.com.wsit.quizapp.utils.Constants;
@@ -18,6 +19,7 @@ public class Settings extends PreferenceActivity
 {
     public static final String TAG = Settings.class.getSimpleName();
     ListPreference listPreference;
+    Preference mResetCounters;
     SharedPreferences mSharedPreferences;
 
     @Override
@@ -30,16 +32,25 @@ public class Settings extends PreferenceActivity
 
 
         listPreference = (ListPreference) findPreference(Constants.KEY_SKILL_LEVEL);
+        mResetCounters = findPreference(Constants.KEY_RESET);
         // Get the value
         String skillLevel = mSharedPreferences.getString(Constants.KEY_SKILL_LEVEL, "Easy");
 
+        // Set the title and value
         listPreference.setValue(skillLevel);
         listPreference.setTitle(skillLevel);
-
+        // Sets the summary text for the skill level
         setSummary(skillLevel);
 
-        listPreference.setValue(skillLevel);
-        listPreference.setTitle(skillLevel);
+        mResetCounters.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
+        {
+            @Override
+            public boolean onPreferenceClick(Preference preference)
+            {
+                clearCounters();
+                return false;
+            }
+        });
 
 
         listPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
@@ -61,6 +72,14 @@ public class Settings extends PreferenceActivity
         });
 
 
+    }
+
+    private void clearCounters()
+    {
+        mSharedPreferences.edit().putInt(Constants.KEY_CORRECT_ANSWERS, 0).apply();
+        mSharedPreferences.edit().putInt(Constants.KEY_WRONG_ANSWERS, 0).apply();
+
+        Toast.makeText(getApplicationContext(), "Counters cleared", Toast.LENGTH_SHORT).show();
     }
 
     private void setSummary(String skillLevel)
