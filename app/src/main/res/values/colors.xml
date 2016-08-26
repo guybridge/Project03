@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#FF2B6B97</color>
+    <color name="colorPrimaryDark">#FF3179AB</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="quiz_background">#F5F5F5</color>
+
+    <color name="quiz_background">#FF2B6B97</color>
+    <color name="card_background">#FFFEFEFE</color>
+    <color name="card_text">#FF4F6067</color>
 </resources>

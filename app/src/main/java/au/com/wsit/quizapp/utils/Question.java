@@ -13,6 +13,7 @@ public class Question
     private int mSecondNumber;
     private int mAnswer;
 
+    // Constructor which takes the skill level as a string to initialise the number range
     public Question(String skillLevel)
     {
         mSkillLevel = skillLevel;

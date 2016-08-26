@@ -1,7 +1,7 @@
 package au.com.wsit.quizapp.utils;
 
 /**
- * Created by guyb on 25/08/16.
+ * Getter and setter class for the Adapter
  */
 public class AnswerItems
 {
